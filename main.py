@@ -92,8 +92,8 @@ def heloc_option3(
         years=30
     )
     # HELOC payments with full and half ITC
-    payment_full_itc = amortization_schedule(equity, 0.07, 0.30, years=30)
-    payment_half_itc = amortization_schedule(equity, 0.07, 0.15, years=30)
+    payment_full_itc = amortization_schedule(equity, 0.075, 0.30, years=30)
+    payment_half_itc = amortization_schedule(equity, 0.075, 0.15, years=30)
     # Panel sizes: 1 kW per $3,000 approx
     base_system_kw = equity / 3.0
     full_itc_kw = (equity * 1.30) / 3.0  # using full 30% ITC to buy panels
@@ -103,7 +103,7 @@ def heloc_option3(
     lifetime_savings = payment * 12 * 30  # monthly payment * 12 months * 30 years
 
     return {
-        "instant_equity": f"💰 Instant Equity: Be ${equity:,.2f} richer today.",
+        "instant_equity": f"💰 Instant Equity: Be ${equity*0.3:,.2f} richer today.",
         "lifetime_savings": f"⏳ 30-Year Savings: Save ${lifetime_savings:,.2f} by using solar.",
         "heloc_full_itc": f"🔑 Full 30% ITC HELOC Payment: ${payment_full_itc:,.2f}/mo, Panels: {full_itc_kw:,.2f} kW",  
         "heloc_half_itc": f"🔑 Half 15% ITC HELOC Payment: ${payment_half_itc:,.2f}/mo, Panels: {half_itc_kw:,.2f} kW",  
